@@ -41,4 +41,4 @@ pnpm docs:preview    # 本地预览构建产物
 
 - 新项目级文档按上述分类放入对应目录，并同步更新 `.vitepress/config.mts` 的导航与侧边栏。
 - `.qoder/` 为 Qoder 工具生成内容，不入站、不维护。
-- `nove-admin/openapi: 3.0.yml` 为 OpenAPI 产物，不属于站点页面。
+- OpenAPI 契约等 API 产物不属于站点内容，一律不入本仓库（从 nove-api 的 Swagger 实时获取）。
