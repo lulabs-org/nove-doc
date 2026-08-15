@@ -32,7 +32,10 @@ export default withMermaid(
             text: '项目总览',
             items: [
               { text: '项目介绍', link: '/guide/' },
-              { text: '项目完整概述', link: '/guide/overview' },
+              { text: '项目概述', link: '/guide/overview' },
+              { text: '需求与范围', link: '/guide/requirements' },
+              { text: '目标与成功指标', link: '/guide/goals' },
+              { text: '组织与运营', link: '/guide/organization' },
               { text: '项目名称', link: '/guide/naming' },
               { text: '陆向谦实验室介绍', link: '/guide/lulabs' },
             ],
@@ -50,10 +53,13 @@ export default withMermaid(
             text: '文档导航',
             items: [
               { text: '项目介绍', link: '/guide/' },
-              { text: '项目完整概述', link: '/guide/overview' },
+              { text: '项目概述', link: '/guide/overview' },
+              { text: '需求与范围', link: '/guide/requirements' },
+              { text: '目标与成功指标', link: '/guide/goals' },
+              { text: '组织与运营', link: '/guide/organization' },
               { text: '技术方案总览', link: '/architecture/overview' },
               { text: '实施路线图', link: '/roadmap/implementation' },
-              { text: '数据隐私白皮书', link: '/compliance/privacy-whitepaper' },
+              { text: '数据隐私白皮书', link: '/security/privacy-whitepaper' },
             ],
           },
         ],
@@ -64,17 +70,7 @@ export default withMermaid(
             items: [
               { text: '技术方案总览', link: '/architecture/overview' },
               { text: '系统架构图集', link: '/architecture/system-overview' },
-              { text: '技术框架方案探讨', link: '/architecture/tech-framework' },
-              { text: 'EduMind 完整方案构思', link: '/architecture/edumind-plan' },
               { text: '技术白皮书', link: '/architecture/whitepaper' },
-            ],
-          },
-          {
-            text: '技术参考',
-            collapsed: false,
-            items: [
-              { text: 'HMAC 介绍', link: '/architecture/hmac-intro' },
-              { text: 'HMAC 项目实战指南', link: '/architecture/hmac-guide' },
             ],
           },
         ],
@@ -85,6 +81,36 @@ export default withMermaid(
             items: [
               { text: '实施路线图', link: '/roadmap/implementation' },
               { text: '三年技术与 AI 演进路线图', link: '/roadmap/evolution' },
+            ],
+          },
+        ],
+
+        '/security/': [
+          {
+            text: '权限安全与合规',
+            items: [
+              { text: '人机统一权限体系', link: '/security/permission-system' },
+              { text: '数据与隐私保护白皮书', link: '/security/privacy-whitepaper' },
+            ],
+          },
+        ],
+
+        '/reference/': [
+          {
+            text: '技术参考',
+            items: [
+              { text: 'HMAC 介绍', link: '/reference/hmac-intro' },
+              { text: 'HMAC 项目实战指南', link: '/reference/hmac-guide' },
+            ],
+          },
+        ],
+
+        '/archive/': [
+          {
+            text: '历史方案归档',
+            items: [
+              { text: '技术框架方案探讨（v1.0）', link: '/archive/tech-framework' },
+              { text: 'EduMind 完整方案构思', link: '/archive/edumind-plan' },
             ],
           },
         ],

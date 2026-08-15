@@ -48,26 +48,30 @@ features:
 ### 🎓 项目总览
 
 - [项目介绍](/guide/) — 定位、对外交互方式、权限控制、首个落地场景
-- [项目完整概述](/guide/overview) — 愿景理念 · 系统定位 · 核心特点 · 需求范围 · KPI · 组织分工 · 风险预算 · 历史沿革 · 术语
+- [项目概述](/guide/overview) — 愿景理念 · 系统定位 · 核心特点 · AI 归属决策 · 历史沿革 · 术语
+- [需求与范围](/guide/requirements) — 核心用户 · 典型场景 · 范围边界
+- [目标与成功指标](/guide/goals) — 项目目标 · 建设原则 · KPI
+- [组织与运营](/guide/organization) — 组织分工 · 风险应对 · 预算资源
 - [项目名称](/guide/naming) — nove 命名理念（New / Organized / Versatile / Empowered）
 - [陆向谦实验室介绍](/guide/lulabs) — 首个落地客户
 
 ### 🏗️ 架构与技术
 
-- [技术方案总览](/architecture/overview) — 整体架构 · 系统四层架构 · 核心模块详解 · AI 轻/重分层 · HMAC · Job 模型 · 技术选型
+- [技术方案总览](/architecture/overview) — 整体架构 · 系统四层架构 · 核心模块详解 · AI 轻/重分层 · Job 模型 · 技术选型
 - [系统架构图集](/architecture/system-overview) — ASCII / Mermaid 架构图
 - [技术白皮书](/architecture/whitepaper) — 数据仓库 + AI 服务独立化的完整技术论证
-- [HMAC 介绍](/architecture/hmac-intro) · [HMAC 项目实战指南](/architecture/hmac-guide) — 服务间鉴权参考
-- [历史方案探讨](/architecture/tech-framework) — v1.0 教育中台时期的技术选型参考
+- [HMAC 介绍](/reference/hmac-intro) · [HMAC 项目实战指南](/reference/hmac-guide) — 服务间鉴权参考（技术参考板块）
+- [历史方案归档](/archive/tech-framework) — v1.0 教育中台时期的技术选型参考（归档板块）
 
 ### 🗺️ 路线图
 
 - [实施路线图](/roadmap/implementation) — 迭代策略 · 三阶段规划 · 12 周里程碑（M1-M6）· v1.0 交付物
 - [三年技术与 AI 演进路线图](/roadmap/evolution) — 2026-2028 系统 / AI / 数据治理 / 工程成熟度演进
 
-### 🔒 数据与合规
+### 🔒 权限安全与合规
 
-- [数据与隐私保护白皮书](/compliance/privacy-whitepaper) — 数据治理原则 · 生命周期 · 人机统一权限 · AI 访问审计 · 合规对齐
+- [人机统一权限体系](/security/permission-system) — 双主体模型 · RBAC/ABAC · AI scope 白名单 · 全链路审计 · 数据脱敏
+- [数据与隐私保护白皮书](/security/privacy-whitepaper) — 数据治理原则 · 生命周期 · AI 访问审计 · 合规对齐
 
 ---
 

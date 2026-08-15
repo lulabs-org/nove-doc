@@ -3,9 +3,8 @@
 nove 项目级文档中心（VitePress 站点），承载**跨子项目的业务文档**：
 
 - 定位：个人 / 组织 / 企业智能数据仓库与 Agent 数据基础设施
-- 项目书、白皮书、路线图
-- 架构与技术方案探讨
-- 管理后台方案与草稿
+- 项目书总览、项目概述、架构与技术、路线图、权限安全与合规
+- 技术参考（HMAC 等）与历史方案归档
 
 > 各代码仓库（`nove_api` / `nove-admin` / `nove-cli` / `nove-skills`）的技术文档仍由各自仓库维护；本站只收录项目级文档。
 
@@ -27,12 +26,21 @@ pnpm docs:preview    # 本地预览构建产物
 
 ```
 .
-├── index.md                    # 首页
-├── guide/                      # 项目总览（介绍 / 概述 / 名称 / 陆向谦实验室）
-├── project-book.md             # NOVE 项目书
-├── architecture/               # 架构与技术（总览 / 图集 / 方案探讨 / 白皮书 / HMAC 参考）
+├── index.md                    # 首页（按板块导航）
+├── project-book.md             # 项目书总览（14 章摘要 + 锚点直达）
+├── guide/                      # 项目总览
+│   ├── index.md                # 项目介绍
+│   ├── overview.md             # 项目概述（愿景/定位/特点/历史沿革/术语）
+│   ├── requirements.md         # 需求与范围
+│   ├── goals.md                # 目标与成功指标（KPI）
+│   ├── organization.md         # 组织与运营（分工/风险/预算）
+│   ├── naming.md               # 项目名称
+│   └── lulabs.md               # 陆向谦实验室（合作方）
+├── architecture/               # 架构与技术（总览 / 架构图集 / 技术白皮书）
 ├── roadmap/                    # 实施路线图 / 三年演进路线图
-├── compliance/                 # 数据隐私白皮书
+├── security/                   # 权限安全与合规（人机统一权限 / 数据隐私白皮书）
+├── reference/                  # 技术参考（HMAC 介绍 / 实战指南）
+├── archive/                    # 历史方案归档（v1.0 技术框架 / EduMind 构想）
 └── .vitepress/                 # VitePress 配置与主题
 ```
 
