@@ -25,13 +25,6 @@ export default withMermaid(
         { text: '权限安全', link: '/security/', activeMatch: '/security/' },
         { text: '路线图', link: '/roadmap/', activeMatch: '/roadmap/' },
         { text: '合作方', link: '/partners/', activeMatch: '/partners/' },
-        {
-          text: '更多',
-          items: [
-            { text: '技术参考', link: '/reference/' },
-            { text: '历史方案归档', link: '/archive/' },
-          ],
-        },
       ],
 
       sidebar: {
@@ -97,29 +90,6 @@ export default withMermaid(
             items: [
               { text: '板块索引', link: '/partners/' },
               { text: '陆向谦实验室介绍', link: '/partners/lulabs' },
-            ],
-          },
-        ],
-
-        '/reference/': [
-          {
-            text: '技术参考',
-            items: [
-              { text: '板块索引', link: '/reference/' },
-              { text: 'HMAC 介绍', link: '/reference/hmac-intro' },
-              { text: 'HMAC 项目实战指南', link: '/reference/hmac-guide' },
-            ],
-          },
-        ],
-
-        '/archive/': [
-          {
-            text: '历史方案归档',
-            items: [
-              { text: '板块索引', link: '/archive/' },
-              { text: '技术框架方案探讨（v1.0）', link: '/archive/tech-framework' },
-              { text: 'EduMind 完整方案构思', link: '/archive/edumind-plan' },
-              { text: '合作方资料归档（陆向谦实验室）', link: '/archive/lulabs' },
             ],
           },
         ],

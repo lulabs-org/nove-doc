@@ -95,7 +95,7 @@ nove 的 AI 能力采用**轻/重分层**，实体归属 **nove-ai（FastAPI + P
 | 重量异步 | Embedding 入库、语义关联发现、知识图谱构建、批量转写总结、用户画像 | nove-ai（Python），Job 化 |
 
 - nove-api 永不直接依赖具体模型，只通过 AiClient（超时/重试/熔断/降级）调用 nove-ai
-- 服务间用 HMAC 签名鉴权（详见 [技术参考](/reference/hmac-intro)）
+- 服务间用 HMAC 签名鉴权（方案详见 [技术方案总览](/architecture/overview) 第七节）
 - 慢任务一律异步 Job（queued → running → succeeded / failed），结果回写数据库
 
 ---

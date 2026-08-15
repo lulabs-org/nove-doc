@@ -1,6 +1,6 @@
 # 陆向谦实验室（LuLabs）
 
-> nove 的**首个落地合作方 / 客户**（教育场景，v1 样板）。本页为合作方简介与 nove 落地场景；合作方内部教学资料（PBL、试错教育、多师制、课程体系等）已归档至 [历史归档](/archive/lulabs)。
+> nove 的**首个落地合作方 / 客户**（教育场景，v1 样板）。本页为合作方简介与 nove 落地场景；合作方内部教学资料（PBL、试错教育、多师制、课程体系等）见合作方飞书知识库。
 
 ## 合作方简介
 
@@ -49,4 +49,3 @@
 
 - [俱乐部列表（飞书知识库）](https://oad0a72p9r.feishu.cn/wiki/Ecnewm7OCimkMSkL4ArcKG5rnu5?from=from_copylink)
 - [案例整理（飞书知识库）](https://oad0a72p9r.feishu.cn/wiki/BguAwiojLi6H66k2Ztbc0idznkh?from=from_copylink)
-- [合作方内部资料归档](/archive/lulabs)
