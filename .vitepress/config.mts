@@ -39,6 +39,25 @@ export default withMermaid(
           },
         ],
 
+        '/project-book': [
+          {
+            text: '项目书',
+            items: [
+              { text: '项目书 · 总览', link: '/project-book' },
+            ],
+          },
+          {
+            text: '文档导航',
+            items: [
+              { text: '项目介绍', link: '/guide/' },
+              { text: '项目完整概述', link: '/guide/overview' },
+              { text: '技术方案总览', link: '/architecture/overview' },
+              { text: '实施路线图', link: '/roadmap/implementation' },
+              { text: '数据隐私白皮书', link: '/compliance/privacy-whitepaper' },
+            ],
+          },
+        ],
+
         '/architecture/': [
           {
             text: '架构与技术',
