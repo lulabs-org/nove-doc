@@ -7,7 +7,7 @@ export default withMermaid(
     srcExclude: ['README.md'],
     lang: 'zh-CN',
     title: 'nove 项目文档',
-    description: 'nove 项目文档 — 「太子洗马」式个性化智能教育平台的愿景、项目书、架构与路线图',
+    description: 'nove 项目文档 — 个人/组织/企业智能数据仓库与 Agent 数据基础设施',
 
     head: [
       ['meta', { name: 'theme-color', content: '#7c3aed' }],
