@@ -22,8 +22,16 @@ export default withMermaid(
         { text: '首页', link: '/' },
         { text: '项目总览', link: '/guide/', activeMatch: '/guide/' },
         { text: '架构与技术', link: '/architecture/', activeMatch: '/architecture/' },
+        { text: '权限安全', link: '/security/', activeMatch: '/security/' },
         { text: '路线图', link: '/roadmap/', activeMatch: '/roadmap/' },
         { text: '合作方', link: '/partners/', activeMatch: '/partners/' },
+        {
+          text: '更多',
+          items: [
+            { text: '技术参考', link: '/reference/' },
+            { text: '历史方案归档', link: '/archive/' },
+          ],
+        },
       ],
 
       sidebar: {
@@ -33,20 +41,17 @@ export default withMermaid(
             items: [
               { text: '板块索引', link: '/guide/' },
               { text: '项目概述', link: '/guide/overview' },
+              { text: '项目名称', link: '/guide/naming' },
               { text: '需求与范围', link: '/guide/requirements' },
               { text: '目标与成功指标', link: '/guide/goals' },
               { text: '组织与运营', link: '/guide/organization' },
-              { text: '项目名称', link: '/guide/naming' },
             ],
           },
-        ],
-
-        '/partners/': [
           {
-            text: '合作方与落地场景',
+            text: '产品现状',
             items: [
-              { text: '板块索引', link: '/partners/' },
-              { text: '陆向谦实验室介绍', link: '/partners/lulabs' },
+              { text: '数据源接入矩阵', link: '/guide/data-sources' },
+              { text: '能力状态总览', link: '/guide/capabilities' },
             ],
           },
         ],
@@ -59,6 +64,18 @@ export default withMermaid(
               { text: '技术方案总览', link: '/architecture/overview' },
               { text: '系统架构图集', link: '/architecture/system-overview' },
               { text: '技术白皮书', link: '/architecture/whitepaper' },
+              { text: '数据格式与扩展机制（方案探讨）', link: '/architecture/data-format' },
+            ],
+          },
+        ],
+
+        '/security/': [
+          {
+            text: '权限安全与合规',
+            items: [
+              { text: '板块索引', link: '/security/' },
+              { text: '人机统一权限体系', link: '/security/permission-system' },
+              { text: '数据与隐私保护白皮书', link: '/security/privacy-whitepaper' },
             ],
           },
         ],
@@ -74,13 +91,12 @@ export default withMermaid(
           },
         ],
 
-        '/security/': [
+        '/partners/': [
           {
-            text: '权限安全与合规',
+            text: '合作方与落地场景',
             items: [
-              { text: '板块索引', link: '/security/' },
-              { text: '人机统一权限体系', link: '/security/permission-system' },
-              { text: '数据与隐私保护白皮书', link: '/security/privacy-whitepaper' },
+              { text: '板块索引', link: '/partners/' },
+              { text: '陆向谦实验室介绍', link: '/partners/lulabs' },
             ],
           },
         ],

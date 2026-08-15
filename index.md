@@ -46,6 +46,11 @@ features:
 - [组织与运营](/guide/organization) — 组织分工 · 风险应对 · 预算资源
 - [项目名称](/guide/naming) — nove 命名理念（New / Organized / Versatile / Empowered）
 
+### 📡 产品现状（文档与代码对齐）
+
+- [数据源接入矩阵](/guide/data-sources) — 已接入 / 规划中数据源 · 接入方式 · 承载模块
+- [能力状态总览](/guide/capabilities) — 组件 / 接口协议 / AI 能力状态（已可用 · 部分可用 · 规划中）
+
 ### 🤝 合作方与落地场景
 
 - [陆向谦实验室介绍](/partners/lulabs) — 首个落地客户与合作方（教育场景）
@@ -55,6 +60,7 @@ features:
 - [技术方案总览](/architecture/overview) — 整体架构 · 系统四层架构 · 核心模块详解 · AI 轻/重分层 · Job 模型 · 技术选型
 - [系统架构图集](/architecture/system-overview) — ASCII / Mermaid 架构图
 - [技术白皮书](/architecture/whitepaper) — 数据仓库 + AI 服务独立化的完整技术论证
+- [数据格式与扩展机制（方案探讨）](/architecture/data-format) — 内置数据仓库格式现状 · 三种设计取向 · 落地路径
 - [HMAC 介绍](/reference/hmac-intro) · [HMAC 项目实战指南](/reference/hmac-guide) — 服务间鉴权参考（技术参考板块）
 - [历史方案归档](/archive/tech-framework) — v1.0 教育中台时期的技术选型参考（归档板块）
 

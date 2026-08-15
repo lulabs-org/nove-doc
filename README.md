@@ -33,11 +33,13 @@ pnpm docs:preview    # 本地预览构建产物
 │   ├── requirements.md         # 需求与范围
 │   ├── goals.md                # 目标与成功指标（KPI）
 │   ├── organization.md         # 组织与运营（分工/风险/预算）
-│   └── naming.md               # 项目名称
+│   ├── naming.md               # 项目名称
+│   ├── data-sources.md         # 数据源接入矩阵（已接入/规划中数据源）
+│   └── capabilities.md         # 能力状态总览（组件/协议/AI 能力状态）
 ├── partners/                   # 合作方与落地场景
 │   ├── index.md                # 板块索引（文档导航页）
 │   └── lulabs.md               # 陆向谦实验室（首个落地客户）
-├── architecture/               # 架构与技术（板块索引 / 总览 / 架构图集 / 技术白皮书）
+├── architecture/               # 架构与技术（板块索引 / 总览 / 架构图集 / 技术白皮书 / 数据格式方案探讨）
 ├── roadmap/                    # 路线图（板块索引 / 实施路线图 / 三年演进路线图）
 ├── security/                   # 权限安全与合规（板块索引 / 人机统一权限 / 数据隐私白皮书）
 ├── reference/                  # 技术参考（板块索引 / HMAC 介绍 / 实战指南）

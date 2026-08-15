@@ -120,6 +120,8 @@ AI/Agent(API/MCP/Skill/CLI) ──► nove-api ──► nove-ai
 
 ## 五、nove-ai（FastAPI）职责
 
+> ⚠️ **现状说明**：nove-ai 目前为**规划中**（仓库尚未实现），本节为既定职责设计；当前轻量 AI 调用由 nove-api 内嵌 LlmService 承担。整体能力状态见 [能力状态总览](/guide/capabilities)。
+
 ### 核心能力
 
 1. 数据预处理（自动总结、实体抽取、字段映射）
