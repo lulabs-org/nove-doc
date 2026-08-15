@@ -28,6 +28,14 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 yarn.lock
+pnpm-lock.yaml
+
+# VitePress cache & build output
+.vitepress/cache/
+.vitepress/dist/
+
+# Qoder 工具生成的 repowiki 内容（不入站、不维护）
+.qoder/
 
 # Python (if you add any scripts later)
 __pycache__/
