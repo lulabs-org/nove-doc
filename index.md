@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: nove
-  text: 个人、组织与企业的智能数据仓库
-  tagline: 实时汇聚多源数据，经 AI 预处理形成有机关联的数据资产，通过 API / MCP / Skill / CLI 对外提供数据交互 —— 主要服务 AI 与 Agent，人类通过 nove-admin 查看与操作。
+  text: 组织级 Agent 数据基础设施
+  tagline: 实时汇聚组织多源数据，经 AI 预处理形成有机关联的数据资产，以最小权限、全量审计开放为 API / MCP / Skill / CLI —— 让 AI 与 Agent 安全地调用组织数据；人类通过 nove-admin 查看与操作。
   actions:
     - theme: brand
       text: 📖 项目概述
@@ -17,23 +17,20 @@ hero:
       link: /architecture/overview
 
 features:
+  - icon: 🛡️
+    title: 人机统一权限与审计
+    details: 对 AI 实行严格、全面的权限访问控制 —— 独立身份、最小 scope、全量审计，AI 只能在授权范围内访问数据。
+  - icon: 🔌
+    title: 多协议开放接口
+    details: 通过 API、MCP、Skill、CLI 对外提供数据交互，可嵌入任何 Agent Harness 与 Agent 应用平台，是组织数据的开放网关。
+  - icon: 🧠
+    title: AI 预处理与关联
+    details: AI 对入库数据实时预处理，自动找出数据间的关联与联系，形成组织级有机结合的数据资产。
   - icon: 🗄️
     title: 多源数据汇聚
     details: 实时、定时地从会议、订单、用户、聊天记录、客户对接、用户画像、群聊、产品、邮件、合同等方方面面获取数据。
-  - icon: 🧠
-    title: AI 预处理与关联
-    details: AI 对入库数据实时预处理，自动找出其中的关联与联系，形成组织庞大的、有机结合的数据仓库。
-  - icon: 🔌
-    title: 多协议对外接口
-    details: 通过 API、MCP、Skill、CLI 等一系列接口对外提供数据交互，成为其他 Agent Harness 的强大数据后盾。
-  - icon: 🤖
-    title: 面向 AI 与 Agent
-    details: 数据的主要消费者是 AI 与 Agent；人类用户主要通过 nove-admin 查看与操作。
-  - icon: 🛡️
-    title: 严格的人机权限控制
-    details: 对 AI 实行严格、全面的权限访问控制 —— 独立身份、最小 scope、全量审计，AI 只能在授权范围内访问数据。
   - icon: 🧩
-    title: 可拓展的数据格式
+    title: 可扩展的数据格式
     details: 内置数据仓库格式，支持通过插件等自定义方式接入新的数据形态，随业务演进持续扩展。
 ---
 
@@ -43,13 +40,15 @@ features:
 
 ### 🎓 项目总览
 
-- [项目介绍](/guide/) — 定位、对外交互方式、权限控制、首个落地场景
-- [项目概述](/guide/overview) — 愿景理念 · 系统定位 · 核心特点 · AI 归属决策 · 历史沿革 · 术语
+- [项目概述](/guide/overview) — 定位、对外交互方式、权限控制、首个落地场景 · 愿景理念 · 系统定位 · 核心特点 · AI 归属决策 · 历史沿革 · 术语
 - [需求与范围](/guide/requirements) — 核心用户 · 典型场景 · 范围边界
 - [目标与成功指标](/guide/goals) — 项目目标 · 建设原则 · KPI
 - [组织与运营](/guide/organization) — 组织分工 · 风险应对 · 预算资源
 - [项目名称](/guide/naming) — nove 命名理念（New / Organized / Versatile / Empowered）
-- [陆向谦实验室介绍](/guide/lulabs) — 首个落地客户
+
+### 🤝 合作方与落地场景
+
+- [陆向谦实验室介绍](/partners/lulabs) — 首个落地客户与合作方（教育场景）
 
 ### 🏗️ 架构与技术
 

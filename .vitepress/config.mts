@@ -7,7 +7,7 @@ export default withMermaid(
     srcExclude: ['README.md'],
     lang: 'zh-CN',
     title: 'nove 项目文档',
-    description: 'nove 项目文档 — 个人/组织/企业智能数据仓库与 Agent 数据基础设施',
+    description: 'nove 项目文档 — 组织级 Agent 数据基础设施（数据网关）：让组织数据成为 AI 与 Agent 可安全调用的资产',
 
     head: [
       ['meta', { name: 'theme-color', content: '#7c3aed' }],
@@ -23,6 +23,7 @@ export default withMermaid(
         { text: '项目总览', link: '/guide/', activeMatch: '/guide/' },
         { text: '架构与技术', link: '/architecture/', activeMatch: '/architecture/' },
         { text: '路线图', link: '/roadmap/', activeMatch: '/roadmap/' },
+        { text: '合作方', link: '/partners/', activeMatch: '/partners/' },
       ],
 
       sidebar: {
@@ -30,13 +31,22 @@ export default withMermaid(
           {
             text: '项目总览',
             items: [
-              { text: '项目介绍', link: '/guide/' },
+              { text: '板块索引', link: '/guide/' },
               { text: '项目概述', link: '/guide/overview' },
               { text: '需求与范围', link: '/guide/requirements' },
               { text: '目标与成功指标', link: '/guide/goals' },
               { text: '组织与运营', link: '/guide/organization' },
               { text: '项目名称', link: '/guide/naming' },
-              { text: '陆向谦实验室介绍', link: '/guide/lulabs' },
+            ],
+          },
+        ],
+
+        '/partners/': [
+          {
+            text: '合作方与落地场景',
+            items: [
+              { text: '板块索引', link: '/partners/' },
+              { text: '陆向谦实验室介绍', link: '/partners/lulabs' },
             ],
           },
         ],
@@ -45,6 +55,7 @@ export default withMermaid(
           {
             text: '架构与技术',
             items: [
+              { text: '板块索引', link: '/architecture/' },
               { text: '技术方案总览', link: '/architecture/overview' },
               { text: '系统架构图集', link: '/architecture/system-overview' },
               { text: '技术白皮书', link: '/architecture/whitepaper' },
@@ -56,6 +67,7 @@ export default withMermaid(
           {
             text: '路线图',
             items: [
+              { text: '板块索引', link: '/roadmap/' },
               { text: '实施路线图', link: '/roadmap/implementation' },
               { text: '三年技术与 AI 演进路线图', link: '/roadmap/evolution' },
             ],
@@ -66,6 +78,7 @@ export default withMermaid(
           {
             text: '权限安全与合规',
             items: [
+              { text: '板块索引', link: '/security/' },
               { text: '人机统一权限体系', link: '/security/permission-system' },
               { text: '数据与隐私保护白皮书', link: '/security/privacy-whitepaper' },
             ],
@@ -76,6 +89,7 @@ export default withMermaid(
           {
             text: '技术参考',
             items: [
+              { text: '板块索引', link: '/reference/' },
               { text: 'HMAC 介绍', link: '/reference/hmac-intro' },
               { text: 'HMAC 项目实战指南', link: '/reference/hmac-guide' },
             ],
@@ -86,8 +100,10 @@ export default withMermaid(
           {
             text: '历史方案归档',
             items: [
+              { text: '板块索引', link: '/archive/' },
               { text: '技术框架方案探讨（v1.0）', link: '/archive/tech-framework' },
               { text: 'EduMind 完整方案构思', link: '/archive/edumind-plan' },
+              { text: '合作方资料归档（陆向谦实验室）', link: '/archive/lulabs' },
             ],
           },
         ],
