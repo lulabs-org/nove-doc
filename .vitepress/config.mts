@@ -24,7 +24,6 @@ export default withMermaid(
         { text: '项目书', link: '/project-book', activeMatch: '/project-book' },
         { text: '架构与技术', link: '/architecture/', activeMatch: '/architecture/' },
         { text: '路线图', link: '/roadmap/', activeMatch: '/roadmap/' },
-        { text: '管理后台方案', link: '/admin/', activeMatch: '/admin/' },
       ],
 
       sidebar: {
@@ -67,25 +66,6 @@ export default withMermaid(
             items: [
               { text: '实施路线图', link: '/roadmap/implementation' },
               { text: '三年技术与 AI 演进路线图', link: '/roadmap/evolution' },
-            ],
-          },
-        ],
-
-        '/admin/': [
-          {
-            text: '管理后台方案',
-            items: [
-              { text: '技术栈选型', link: '/admin/' },
-              { text: '开发路线', link: '/admin/development-roadmap' },
-              { text: '架构落地方案', link: '/admin/architecture-plan' },
-            ],
-          },
-          {
-            text: '方案草稿',
-            collapsed: true,
-            items: [
-              { text: '草稿一', link: '/admin/draft-demo-1' },
-              { text: '草稿二', link: '/admin/draft-demo-2' },
             ],
           },
         ],

@@ -44,7 +44,6 @@ features:
 - **架构与技术** — [技术方案总览](/architecture/overview)、[系统架构图集](/architecture/system-overview)、[技术白皮书](/architecture/whitepaper)、[历史方案探讨](/architecture/tech-framework)
 - **路线图** — [实施路线图](/roadmap/implementation)、[三年技术与 AI 演进路线图](/roadmap/evolution)
 - **数据与合规** — [数据隐私白皮书](/compliance/privacy-whitepaper)
-- **管理后台方案** — [技术栈选型](/admin/)、[开发路线](/admin/development-roadmap)、[架构落地方案](/admin/architecture-plan)
 
 ## 相关仓库
 

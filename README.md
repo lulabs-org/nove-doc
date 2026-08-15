@@ -33,7 +33,6 @@ pnpm docs:preview    # 本地预览构建产物
 ├── architecture/               # 架构与技术（总览 / 图集 / 方案探讨 / 白皮书 / HMAC 参考）
 ├── roadmap/                    # 实施路线图 / 三年演进路线图
 ├── compliance/                 # 数据隐私白皮书
-├── admin/                      # 管理后台方案与草稿
 └── .vitepress/                 # VitePress 配置与主题
 ```
 
@@ -42,3 +41,4 @@ pnpm docs:preview    # 本地预览构建产物
 - 新项目级文档按上述分类放入对应目录，并同步更新 `.vitepress/config.mts` 的导航与侧边栏。
 - `.qoder/` 为 Qoder 工具生成内容，不入站、不维护。
 - OpenAPI 契约等 API 产物不属于站点内容，一律不入本仓库（从 nove-api 的 Swagger 实时获取）。
+- 各代码仓库的规划期方案 / 工程文档归各自仓库维护（如 nove-admin 的工程文档在 `nove-admin/docs/`），本仓库只保留项目级文档。
