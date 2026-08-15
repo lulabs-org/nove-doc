@@ -28,7 +28,6 @@ yarn-debug.log*
 yarn-error.log*
 package-lock.json
 yarn.lock
-pnpm-lock.yaml
 
 # VitePress cache & build output
 .vitepress/cache/
