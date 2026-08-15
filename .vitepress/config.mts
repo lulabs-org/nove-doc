@@ -21,7 +21,6 @@ export default withMermaid(
       nav: [
         { text: '首页', link: '/' },
         { text: '项目总览', link: '/guide/', activeMatch: '/guide/' },
-        { text: '项目书', link: '/project-book', activeMatch: '/project-book' },
         { text: '架构与技术', link: '/architecture/', activeMatch: '/architecture/' },
         { text: '路线图', link: '/roadmap/', activeMatch: '/roadmap/' },
       ],
@@ -38,28 +37,6 @@ export default withMermaid(
               { text: '组织与运营', link: '/guide/organization' },
               { text: '项目名称', link: '/guide/naming' },
               { text: '陆向谦实验室介绍', link: '/guide/lulabs' },
-            ],
-          },
-        ],
-
-        '/project-book': [
-          {
-            text: '项目书',
-            items: [
-              { text: '项目书 · 总览', link: '/project-book' },
-            ],
-          },
-          {
-            text: '文档导航',
-            items: [
-              { text: '项目介绍', link: '/guide/' },
-              { text: '项目概述', link: '/guide/overview' },
-              { text: '需求与范围', link: '/guide/requirements' },
-              { text: '目标与成功指标', link: '/guide/goals' },
-              { text: '组织与运营', link: '/guide/organization' },
-              { text: '技术方案总览', link: '/architecture/overview' },
-              { text: '实施路线图', link: '/roadmap/implementation' },
-              { text: '数据隐私白皮书', link: '/security/privacy-whitepaper' },
             ],
           },
         ],

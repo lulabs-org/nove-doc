@@ -7,11 +7,11 @@ hero:
   tagline: 实时汇聚多源数据，经 AI 预处理形成有机关联的数据资产，通过 API / MCP / Skill / CLI 对外提供数据交互 —— 主要服务 AI 与 Agent，人类通过 nove-admin 查看与操作。
   actions:
     - theme: brand
-      text: 📖 项目书总览
-      link: /project-book
-    - theme: alt
-      text: 项目完整概述
+      text: 📖 项目概述
       link: /guide/overview
+    - theme: alt
+      text: 需求与范围
+      link: /guide/requirements
     - theme: alt
       text: 架构与技术
       link: /architecture/overview
@@ -39,11 +39,7 @@ features:
 
 ## 按板块浏览
 
-> 项目书详细内容已按主题分布到各板块，每项主题在对应板块有唯一权威来源；[项目书总览](/project-book) 保留 14 章结构与全部跳转入口。
-
-### 📖 项目书总览
-
-[项目书 · 总览](/project-book) — 项目概述、需求与范围、总体架构、关键功能、技术方案、里程碑、组织分工、交付物、KPI、风险、合规、预算、迭代策略、附录（14 章摘要 + 锚点直达）
+> 文档按主题分布在以下板块，每项主题有唯一权威来源；首页即为全站导航。
 
 ### 🎓 项目总览
 

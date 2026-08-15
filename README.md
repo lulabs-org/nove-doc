@@ -27,7 +27,6 @@ pnpm docs:preview    # 本地预览构建产物
 ```
 .
 ├── index.md                    # 首页（按板块导航）
-├── project-book.md             # 项目书总览（14 章摘要 + 锚点直达）
 ├── guide/                      # 项目总览
 │   ├── index.md                # 项目介绍
 │   ├── overview.md             # 项目概述（愿景/定位/特点/历史沿革/术语）

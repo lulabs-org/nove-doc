@@ -1,7 +1,7 @@
 # nove 项目概述
 
 > **本文档是项目概述。** 需求与场景、目标与指标、组织与运营已拆分到独立文档：
-> [需求与范围](./requirements) · [目标与成功指标](./goals) · [组织与运营](./organization) · [项目书总览](/project-book)
+> [需求与范围](./requirements) · [目标与成功指标](./goals) · [组织与运营](./organization)
 
 ## 一、项目概述
 
