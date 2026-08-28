@@ -36,7 +36,7 @@
 - 架构：
   - nove-admin（React，人类入口）
   - nove-api（NestJS，数据仓库主服务）
-  - nove-ai（FastAPI，AI 独立服务）
+  - 外部 Agent 软件（如 OpenClaw / Hermes，前期代办复杂 AI 计算，远期演进为自研 nove-ai）
 - 部署：
   - Docker Compose
   - 单环境（prod / staging）
@@ -51,7 +51,7 @@
 **设计原则**
 - 结构化输出
 - 强可解释性
-- 轻量任务（同步）留在 nove-api，重量任务（异步 Job）归 nove-ai
+- 轻量任务（同步）留在 nove-api，重量任务（异步 Job）交由外部 Agent 软件（远期归 nove-ai）
 
 > ❌ 不做：无约束的开放式数据访问  
 > ✅ 做：受控、可审计的 AI 数据调用
@@ -62,7 +62,7 @@
 - Redis：任务 / 缓存
 - 明确数据责任边界：
   - nove-api：事实数据（业务真相）
-  - nove-ai：计算结果（可重建）
+  - AI 计算层（外部 Agent / 远期 nove-ai）：计算结果（可重建）
 - 内置数据仓库格式 + 元数据 / 溯源
 
 ### 2.5 成功标志（Year 1 Exit）
@@ -89,7 +89,8 @@
 - nove-api：
   - 拆分领域模块
   - 部分服务可独立部署
-- nove-ai：
+- AI 计算侧：
+  - 逐步启动自研 nove-ai 服务，平滑替代前期过渡使用的外部 Agent 软件
   - AI 能力模块化（Preprocess / Link / Embed / Profile）
 
 ### 3.3 AI 能力演进

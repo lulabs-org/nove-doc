@@ -4,7 +4,7 @@ layout: home
 hero:
   name: nove
   text: 组织级 Agent 数据基础设施
-  tagline: 实时汇聚组织多源数据，经 AI 预处理形成有机关联的数据资产，以最小权限、全量审计开放为 API / MCP / Skill / CLI —— 让 AI 与 Agent 安全地调用组织数据；人类通过 nove-admin 查看与操作。
+  tagline: 汇聚多源业务数据，经 AI 智能关联重塑资产价值。在严密的权限与审计体系下，通过 API、MCP 与 Skill 无缝开放，让 Agent 安全、高效地调用您的组织数据。。
   actions:
     - theme: brand
       text: 📖 项目概述
@@ -79,7 +79,7 @@ features:
 | 仓库 | 说明 |
 | --- | --- |
 | `nove_api` | 数据仓库主服务（NestJS）：数据获取、存储、权限、API/MCP/Skill 暴露，技术文档见 `nove_api/docs/` |
-| `nove-ai` | AI 智能服务（FastAPI + Python）：数据预处理、关联发现、知识图谱、批量智能计算（规划中） |
+| `nove-ai` | AI 智能计算层（规划中，前期由 OpenClaw、Hermes 等外部 Agent 软件代办）：数据预处理、关联发现、知识图谱、批量智能计算 |
 | `nove-admin` | 人类用户入口（React + Vite + Ant Design）：数据查看与操作 |
 | `nove-cli` | 命令行数据访问工具（oclif） |
 | `nove-skills` | Agent 技能包（meeting-api / user-api 参考） |

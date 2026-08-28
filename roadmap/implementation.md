@@ -27,7 +27,7 @@
    - 内置数据仓库格式定义（数据模型、元数据、溯源）
 
 3. **基础 AI 预处理**
-   - nove-ai（FastAPI）起步：自动总结、实体抽取
+   - 接入外部 Agent（OpenClaw / Hermes 等）：代办自动总结、实体抽取等核心预处理
    - AiClient 封装（超时 / 重试 / 熔断 / 降级）
    - 异步 Job 模型（BullMQ）
 
@@ -68,7 +68,7 @@
 
 ### 第3-4周（M2）：数据仓库与 AI 预处理
 - **仓库格式**：内置数据仓库格式定义（数据模型、元数据、溯源）
-- **AI 预处理**：nove-ai（FastAPI）起步，自动总结、实体抽取；AiClient 封装（超时/重试/熔断/降级）
+- **AI 预处理**：引入 OpenClaw / Hermes 等外部 Agent 软件代办自动总结、实体抽取；AiClient 封装（超时/重试/熔断/降级）
 - **异步任务引擎**：BullMQ Job 模型（queued → running → succeeded / failed）
 - **交付物**：数据仓库核心模型、AI 预处理链路、Job 引擎
 

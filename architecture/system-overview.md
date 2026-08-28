@@ -27,8 +27,9 @@
                      同步HTTP/gRPC│         │异步MQ/任务
                                   │         │
                     ┌─────────────▼───┐   ┌▼──────────────────┐
-                    │  AI 服务 nove-ai  │   │ Worker/Jobs 服务   │
-                    │ (FastAPI/Python) │   │(预处理/关联/通知)   │
+                    │ 智能计算层(前期用 │   │ Worker/Jobs 服务   │
+                    │ 外部Agent代办，  │   │(预处理/关联/通知)   │
+                    │ 远期为nove-ai)    │   └─────────┬─────────┘
                     └───────┬──────────┘   └─────────┬─────────┘
                             │                        │
              ┌──────────────▼──────────────┐   ┌────▼─────────┐
@@ -64,7 +65,7 @@ flowchart TB
     API["数据仓库主服务 nove-api<br/>(NestJS：获取 / 存储 / 权限 / 接口)"]
 
     %% ───────────── AI 与任务 ─────────────
-    AI["AI 服务 nove-ai<br/>(FastAPI / Python)"]
+    AI["AI 智能计算层<br/>(前期外部 Agent 代办 / 远期 nove-ai)"]
     WORKER["Worker / Jobs 服务<br/>(预处理 / 关联 / 通知)"]
 
     %% ───────────── AI 内部能力 ─────────────
@@ -151,7 +152,7 @@ flowchart TB
 
   %% ========= 智能与异步 =========
   subgraph L4["智能平面 & 异步计算层"]
-    AI["nove-ai AI 服务<br/>FastAPI / Python（预处理 · 关联 · 图谱）"]:::svc
+    AI["AI 智能计算层<br/>前期由 OpenClaw/Hermes 外部代办<br/>远期演进为 nove-ai"]:::svc
     WORKER["Worker / Jobs<br/>预处理 · 关联 · 通知"]:::svc
     MQ["MQ / 队列 / 调度<br/>Redis / BullMQ（任选）"]:::svc
     LLM["LLM 编排<br/>Embedding · 规则 · RAG / 向量检索"]:::svc
@@ -207,4 +208,4 @@ flowchart TB
 
 ---
 
-> 架构要点：**数据平面（nove-api）承载获取 / 存储 / 权限 / 接口；智能平面（nove-ai）承载预处理 / 关联 / 图谱；人类通过 nove-admin 访问；AI / Agent 通过 API / MCP / Skill / CLI 访问；所有访问受统一的人机权限体系管控。**
+> 架构要点：**数据平面（nove-api）承载获取 / 存储 / 权限 / 接口；智能平面（外部 Agent / 远期 nove-ai）承载预处理 / 关联 / 图谱；人类通过 nove-admin 访问；AI / Agent 通过 API / MCP / Skill / CLI 访问；所有访问受统一的人机权限体系管控。**

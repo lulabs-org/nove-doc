@@ -6,7 +6,7 @@ export default withMermaid(
     ignoreDeadLinks: false,
     srcExclude: ['README.md'],
     lang: 'zh-CN',
-    title: 'nove 项目文档',
+    title: 'nove',
     description: 'nove 项目文档 — 组织级 Agent 数据基础设施（数据网关）：让组织数据成为 AI 与 Agent 可安全调用的资产',
 
     head: [
@@ -16,7 +16,7 @@ export default withMermaid(
     lastUpdated: true,
 
     themeConfig: {
-      siteTitle: 'nove 项目文档',
+      siteTitle: 'nove',
 
       nav: [
         { text: '首页', link: '/' },
@@ -38,6 +38,12 @@ export default withMermaid(
               { text: '需求与范围', link: '/guide/requirements' },
               { text: '目标与成功指标', link: '/guide/goals' },
               { text: '组织与运营', link: '/guide/organization' },
+            ],
+          },
+          {
+            text: '产品设计',
+            items: [
+              { text: '产品设计理念', link: '/guide/product-philosophy' },
             ],
           },
           {

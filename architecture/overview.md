@@ -120,7 +120,7 @@ AI/Agent(API/MCP/Skill/CLI) ──► nove-api ──► nove-ai
 
 ## 五、nove-ai（FastAPI）职责
 
-> ⚠️ **现状说明**：nove-ai 目前为**规划中**（仓库尚未实现），本节为既定职责设计；当前轻量 AI 调用由 nove-api 内嵌 LlmService 承担。整体能力状态见 [能力状态总览](/guide/capabilities)。
+> ⚠️ **落地策略与现状说明**：独立服务 `nove-ai` 目前为**中长期规划**（仓库尚未实现），本节为最终的既定职责设计。**在独立投入开发 `nove-ai` 之前，我们将优先使用 OpenClaw、Hermes 等成熟的 Agent 软件或平台，通过让其代为执行来完成复杂的预处理与数据关联等核心能力**。当前极少量的轻量 AI 调用则暂由 `nove-api` 内嵌的 `LlmService` 承担。整体能力状态见 [能力状态总览](/guide/capabilities)。
 
 ### 核心能力
 
@@ -143,7 +143,7 @@ AI/Agent(API/MCP/Skill/CLI) ──► nove-api ──► nove-ai
 | 任务类型 | 示例 | 归属 |
 |---|---|---|
 | 轻量同步 | 实体抽取、字段映射、短文本分类、单场会议摘要 | nove-api 内嵌封装（AiClient） |
-| 重量异步 | Embedding 入库、语义关联发现、知识图谱构建、批量转写总结、用户画像 | nove-ai（Python），Job 化 |
+| 重量异步 | Embedding 入库、语义关联发现、知识图谱构建、批量转写总结、用户画像 | 早期由 OpenClaw / Hermes 等 Agent 软件实现；远期归属 nove-ai（Python），Job 化 |
 
 ### 为什么实体归属 nove-ai
 
@@ -215,6 +215,8 @@ METHOD | PATH | TIMESTAMP | BODY
 - **接口**: REST + GraphQL + MCP Server + CLI（nove-cli）+ Skill（nove-skills）
 
 #### AI 服务 nove-ai（实体归属）
+> 💡 **前期过渡策略**：暂不直接自研此服务，而是作为外部系统使用 OpenClaw、Hermes 等 Agent 软件，利用其现成的编排能力完成预处理、总结与关联等重型任务。待业务逻辑完全验证跑通后，再按需沉淀至自研的 `nove-ai` 服务中。
+
 - **框架**: FastAPI + Python（AI 生态：LLM 编排、Embedding、图谱、pandas/networkx）
 - **能力**: 数据预处理、关联发现、知识图谱、批量总结、用户画像
 - **任务形态**: 异步 Job（queued → running → succeeded / failed），结果回写数据库
