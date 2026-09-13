@@ -12,21 +12,21 @@
 
 ## 一、整体架构
 
-nove 采用 **数据平面与智能平面分离 + 人类入口独立** 的架构：
+nove 采用 **数据平面与智能平面分离 + 人类入口独立 + 统一连接中枢** 的现代化基础设施架构：
 
-- **nove-admin**：人类用户入口（Vite+React+TS + Ant Design），数据查看与操作
-- **nove-api**：数据仓库主服务（NestJS），数据获取 / 存储 / 权限 / 多协议接口
-- **nove-ai**：AI 智能服务（FastAPI + Python），数据预处理 / 关联发现 / 知识图谱
-- **PostgreSQL**：核心业务数据库
-- **Redis**：缓存 / 会话 / 异步任务状态
-- **消息队列（可选）**：RabbitMQ / Redis Stream
-- **对象存储（可选）**：OSS / S3 / COS
+- **nove-admin**：人类用户入口（Vite + React + TS + Ant Design），承载 16 大业务、资产、结算与治理模块
+- **nove-api**：数据基础设施主服务（NestJS + Prisma 7），承载数据获取 / 存储 / 组织多租户 / 权限 / 商业结算 / 多协议开放接口
+- **nove-ai**：AI 智能服务（规划中，FastAPI + Python；前期由 OpenClaw、Hermes 等外部 Agent 软件代办），承载重型数据预处理 / 跨源关联 / 知识图谱
+- **PostgreSQL**：核心业务数据库（Prisma 7 驱动适配器，44 个模块化子模型，严格按 `organizationId` 逻辑隔离）
+- **Redis**：缓存 / 会话 / BullMQ 异步任务队列
+- **云盘 / 对象存储（Drive）**：文件资产管理、分类索引与业务实体（商品/项目）多维关联
+- **中心化集成中枢（Integrations）**：统一承载腾讯会议、飞书、企业微信、Stripe、微信小店、LLM 配置与连通性自动自测
 
 ```
-AI/Agent(API/MCP/Skill/CLI) ──► nove-api ──► nove-ai
-人类(nove-admin)        ──► nove-api        │
-                    (权限/审计)               ▼
-                              PostgreSQL / Redis / 向量库
+AI/Agent (API / MCP / Skill / CLI) ──► nove-api ──► 外部 Agent / nove-ai (规划)
+人类 (nove-admin)                 ──► nove-api        │
+                             (组织隔离/权限/审计)      ▼
+                                      PostgreSQL (Prisma 7) / Redis / 云盘存储 / 向量库
 ```
 
 ---
@@ -34,76 +34,79 @@ AI/Agent(API/MCP/Skill/CLI) ──► nove-api ──► nove-ai
 ## 二、系统四层架构
 
 ```
-[数据源层]
-  - 会议（腾讯会议/飞书会议 Webhook + API）
-  - 订单 / 用户 / 产品（业务系统）
-  - 聊天 / 群聊 / 邮件 / 合同（IM、邮件、文档系统）
-  - 其它云文档与非结构化文本
+[数据源与生态连接层]
+  - 会议协同：腾讯会议（tmeet）、飞书/乐享会议（lark）Webhook + API 同步
+  - 组织协同：企业微信（wecom）组织架构与用户集成
+  - 商业交易：Stripe 支付与结算（stripe）、微信小店订单与售后（wechat-shop）
+  - 数字资产：云盘存储（drive）、对象存储（OSS / S3 / COS）
+  - 业务数据：项目与课程、订单与退款、分润规则与记录、工资条、产品、渠道、平台用户、实名证件
 
-        │ 实时 / 定时拉取 · Webhook 订阅 · ETL 清洗/脱敏
+        │ 实时 Webhook 回调 · 定时/增量拉取 · 集成自测 · ETL 清洗与脱敏
         ▼
 [数据与索引层]
-  - 关系库（PostgreSQL + Prisma：主数据/权限/审计/元数据）
-  - 向量库（pgvector / Milvus：嵌入、语义检索）
-  - 版本 / 溯源与元数据管理；内置数据仓库格式
+  - 关系库（PostgreSQL + Prisma 7：44 个模块化模型，严格组织所有权 organizationId 隔离）
+  - 存储中心（Drive 云盘存储、文件元数据、业务实体资产归档）
+  - 向量库（pgvector / Milvus 规划中：嵌入与语义检索）
+  - 版本、溯源与元数据管理；内置标准化数据仓库模型
 
-        │ AI 预处理 · 关联发现 · RAG
+        │ AI 预处理 · 商业结算与追回 · 关联发现 · RAG 管道
         ▼
 [能力与中台层]
-  - AI 预处理（总结/抽取/映射）
-  - 关联引擎（数据关联、知识图谱、语义层）
-  - 智能体能力（RAG 问答、报告生成、任务执行）
-  - 人机统一权限（RBAC + ABAC + AI 独立身份 + 审计）
+  - 智能转写与总结：结构化转写、平台用户发言提取、发言人总结、周期跟踪报告
+  - 商业结算与冲销引擎：固定/摊销分润规则核算、全自动退款追回引擎（Clawback Engine）、工资条核算
+  - 资产与业务关联：云盘资产 ↔ 项目封面 / 商品媒体双向绑定
+  - 中心化集成管理：TMeet/Lark/WeCom/Stripe 等统一注册表与 TesterService 连通性自测
+  - 人机统一权限治理：双主体模型、组织多租户穿透、RBAC+细粒度权限点、AI Scope 白名单、JWT 批量吊销、全量审计
 
-        │ API / 网关
+        │ 统一网关 / 多协议暴露
         ▼
 [接口与应用层]
-  - REST API / GraphQL / MCP / Skill / CLI
-  - nove-admin（人类查看与操作）
-  - SDK / 接口文档（OpenAPI 契约驱动）
+  - 开发者与 AI 接口：RESTful API（Swagger/OpenAPI）、GraphQL、MCP Server、Agent Skill
+  - 命令行客户端：nove-cli v1.3.0（覆盖 8 大业务域，支持浏览器 OAuth 授权登录）
+  - 人类管理工作台：nove-admin（16 大功能视图：仪表盘、组织、项目、云盘、分润看板、集成管理等）
 ```
 
 ---
 
 ## 三、核心模块详解
 
-### 3.1 多源数据接入（Connector）
+### 3.1 多源数据接入与集成中枢（Integrations）
 
-1. **数据源抽象**：统一连接器接口，支持 OAuth / API Key 等认证方式。
-2. **同步策略**：实时（Webhook / 流）与定时（增量拉取 / 变更检测）结合。
-3. **统一处理**：结构化与非结构化数据的统一入库流程（元数据提取、权限映射、冲突解决）。
-4. **自定义扩展**：插件化接入新数据源 / 新数据格式。
+1. **统一连接中枢**：系统配置注册表收敛至统一 `configs` 模块，按组织维度管理各大第三方生态（TMeet, Lark, WeCom, Stripe, WechatShop, LLM 等）。
+2. **连接性自测（TesterService）**：各个集成模块内置独立的健康探测器，在后台或 CLI 可实时自检凭证有效性与 API 通讯状态。
+3. **推拉结合策略**：Webhook 实时订阅（签名防篡改、事件幂等去重）与 API 增量/全量同步互补。
+4. **标准化溯源**：入库数据均注入平台类型、外部平台 ID、同步时间戳与 TraceId。
 
-**数据源范围**：会议（转写 / 摘要 / 关键词 / 行动项）、业务（订单、退款、用户、产品、渠道）、沟通（聊天记录、群聊、客户对接、邮件、合同）等。
+### 3.2 商业闭环与分润追回引擎（Commerce & Profit Sharing）
 
-### 3.2 AI 预处理与关联引擎
+1. **交易与权益生命周期**：订单支持按日计算权益周期，支持权益主动冻结与手工调整；退款直接联动权益核销。
+2. **多模式分润核算**：支持按固定周期月结、按模块摊销类型（Amortization Type）自动核算收益，支持分润规则克隆与批量处理。
+3. **退款冲销追回引擎（Refund Clawback Engine）**：通过 Cron 自动化调度，定时对比已结算订单的退款记录，执行全局退款冲销追回，保证财务账目严密一致。
+4. **工资条体系（Payslips）**：结合分润记录与基础调整项，自动化核算并生成组织成员月度工资条。
 
-1. **实时预处理**：数据入库时自动总结、抽取实体、映射字段（轻量任务）。
-2. **关联发现**：批量分析数据间关联（Embedding、图谱构建、跨源关联），形成"有机结合的数据仓库"（重量任务）。
-3. **语义层**：统一检索、推理、会话记忆，支撑 RAG 问答与 Agent 调用。
-4. **RAG 问答**：多轮会话、权限感知检索、可追溯引用、幻觉检测与质量保证。
-5. **智能体能力**：模板化配置（按部门/场景）、数据源绑定（Agent 可访问范围）、API 封装。
+### 3.3 数字资产中枢与业务绑定（Drive）
 
-### 3.3 人机统一权限体系
+1. **统一云盘资产管理**：支持文件的多级目录归类、上传、下载、存储桶抽象与元数据维护。
+2. **业务实体强绑定**：商品媒体文件、项目与课程封面图片可直接从云盘选择或上传归档，消除孤立文件。
 
-1. **双主体模型**：人类用户与 AI Agent 均为独立访问主体。
-2. **权限模型**：RBAC 为主 + ABAC 场景补充；AI 按 scope 白名单授权。
-3. **身份认证**：OAuth 2.0、JWT、API Key（含 `sk_` 前缀的长期密钥）等多种方式。
-4. **全链路审计**：人类与 AI 的每次访问均可追溯、可回放。
-5. **数据脱敏**：自动识别敏感信息（手机号、身份证号）并模糊化处理。
+### 3.4 人机统一权限与多租户治理
 
-### 3.4 多协议接口层
+1. **双主体模型**：人类用户与 AI Agent 均为独立访问主体，AI 绝不借用人类账号。
+2. **组织所有权隔离（Organization Scoping）**：全系统 API 与数据层强制校验当前组织上下文（`organizationId`），实现多租户逻辑严格隔离。
+3. **细粒度权限管控**：RBAC 权限点映射到菜单与操作；AI 访问受严格的 OAuth Scope 与 API Key 读写白名单约束。
+4. **实名与凭据安全**：用户实名证件（Identity Document）加密管理与审核；支持用户级批量失效 JWT 令牌。
 
-1. **REST / GraphQL**：标准数据访问接口（OpenAPI 契约驱动）。
-2. **MCP（Model Context Protocol）**：作为 MCP Server 暴露，供 LLM 直接理解与调用。
-3. **Skill**：面向 Agent 的技能化封装（如 nove-skills）。
-4. **CLI**：命令行数据访问（nove-cli）。
+### 3.5 多协议接口矩阵
 
-### 3.5 运营监控与数据分析
+1. **REST / GraphQL**：基于 OpenAPI 3.0 契约驱动的标准数据接口，全量装饰器 `@Auth()` 与领域异常接管。
+2. **MCP（Model Context Protocol）**：标准化暴露上下文与工具，供 Claude、Cursor 等 AI 客户端直连调用。
+3. **nove-cli 命令行客户端**：v1.3.0 覆盖 8 大业务域（auth, meeting, minute, project, product, order, user, tracking-report），支持浏览器 OAuth 交互登录。
+4. **Skill 技能包**：面向 Agent Harness 提供开箱即用的业务技能集。
 
-- 实时指标：数据接入量、接口调用量、AI 任务成功率、权限审计事件。
-- 智能分析：数据质量、关联覆盖率、热门数据访问识别。
-- 预警机制：系统性能、错误率、安全威胁的智能监控与通知。
+### 3.6 运营监控与审计
+
+- **全量链路审计**：记录访问主体（人类/AI）、时间戳、IP、资源标识与执行操作，可追溯可回放。
+- **任务队列可视化**：BullMQ 异步任务状态（queued → running → succeeded → failed）在管理后台实时呈现与手动重试。
 
 ---
 
@@ -210,9 +213,9 @@ METHOD | PATH | TIMESTAMP | BODY
 
 #### 数据仓库主服务 nove-api
 - **框架**: NestJS + TypeScript（模块化单体，强类型）
-- **数据存储**: PostgreSQL + Prisma ORM（主数据 / 权限 / 审计 / 元数据）；Redis（缓存 / 会话 / 队列）；向量库（pgvector 起步 → Milvus 后期）
-- **异步任务**: BullMQ（Redis）
-- **接口**: REST + GraphQL + MCP Server + CLI（nove-cli）+ Skill（nove-skills）
+- **数据存储**: PostgreSQL + Prisma 7（接入驱动适配器，44 个模块化模型定义；主数据 / 权限 / 商业结算 / 资产元数据）；Redis（缓存 / 会话 / BullMQ 队列）；云盘存储（内部驱动与对象存储）
+- **异步任务**: BullMQ（Redis）+ 定时 Cron 调度（退款冲销追回、数据同步）
+- **接口**: RESTful API（OpenAPI/Swagger）+ GraphQL + MCP Server + CLI（nove-cli v1.3.0）+ Skill（nove-skills）
 
 #### AI 服务 nove-ai（实体归属）
 > 💡 **前期过渡策略**：暂不直接自研此服务，而是作为外部系统使用 OpenClaw、Hermes 等 Agent 软件，利用其现成的编排能力完成预处理、总结与关联等重型任务。待业务逻辑完全验证跑通后，再按需沉淀至自研的 `nove-ai` 服务中。
@@ -223,7 +226,11 @@ METHOD | PATH | TIMESTAMP | BODY
 
 #### 人类入口 nove-admin
 - **框架**: React + Vite + TypeScript + Ant Design
-- 数据查看、数据源管理、权限配置、审计查询、系统管理
+- 覆盖 16 大功能域：仪表盘、组织成员、本地/平台用户与实名证件、商业订单/退款/产品/渠道、分润看板与规则/工资条、项目管理、云盘存储中心、会议与转写、任务队列、追踪报告、中心化集成管理（含连通性自测）、安全设置中心等
+
+#### 命令行客户端 nove-cli
+- **框架**: oclif + TypeScript（v1.3.0）
+- 8 大业务命令域：`auth`（含浏览器 OAuth）、`meeting`、`minute`、`project`、`product`、`order`、`user`、`tracking-report`
 
 ### 9.2 技术选型对比
 

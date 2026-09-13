@@ -4,7 +4,7 @@ layout: home
 hero:
   name: nove
   text: 组织级 Agent 数据基础设施
-  tagline: 汇聚多源业务数据，经 AI 智能关联重塑资产价值。在严密的权限与审计体系下，通过 API、MCP 与 Skill 无缝开放，让 Agent 安全、高效地调用您的组织数据。。
+  tagline: 汇聚多源协作与业务数据，经 AI 智能关联重塑资产价值。在严密的组织多租户隔离与全链路审计下，通过 API、MCP、Skill 与 CLI 无缝开放，让 Agent 安全、合规、高效地调用组织数据。
   actions:
     - theme: brand
       text: 📖 项目概述
@@ -18,20 +18,23 @@ hero:
 
 features:
   - icon: 🛡️
-    title: 人机统一权限与审计
-    details: 对 AI 实行严格、全面的权限访问控制 —— 独立身份、最小 scope、全量审计，AI 只能在授权范围内访问数据。
+    title: 组织多租户隔离与权限治理
+    details: 核心实体强绑定 organizationId 上下文。人类与 AI 双主体模型，AI 按独立身份与最小 Scope 授权，支持 JWT 批量吊销与全量行为审计。
   - icon: 🔌
-    title: 多协议开放接口
-    details: 通过 API、MCP、Skill、CLI 对外提供数据交互，可嵌入任何 Agent Harness 与 Agent 应用平台，是组织数据的开放网关。
-  - icon: 🧠
-    title: AI 预处理与关联
-    details: AI 对入库数据实时预处理，自动找出数据间的关联与联系，形成组织级有机结合的数据资产。
+    title: 多协议与全功能客户端
+    details: 开放 RESTful API、GraphQL、MCP Server、Skill 与 nove-cli（v1.3.0 覆盖 8 大业务域，支持 OAuth 登录），无缝嵌入各类 Agent 平台。
+  - icon: 💰
+    title: 商业结算与分润冲销闭环
+    details: 支持 Stripe 国际化交易与微信小店、订单权益生命周期管理、多模式自动分润核算、Cron 驱动退款追回冲销引擎与工资条系统。
   - icon: 🗄️
-    title: 多源数据汇聚
-    details: 实时、定时地从会议、订单、用户、聊天记录、客户对接、用户画像、群聊、产品、邮件、合同等方方面面获取数据。
+    title: 多源生态汇聚与资产绑定
+    details: 实时与定时连接腾讯会议、飞书、企业微信、Stripe、微信小店与 Drive 云盘存储，支持网盘资源与项目封面、商品媒体资产绑定。
+  - icon: 🧠
+    title: 智能转写总结与轻重 AI 分层
+    details: 会议纪要结构化转写、发言人观点总结与周期跟踪报告；轻量调用内嵌封装，重型关联分析前期借力成熟 Agent 代办。
   - icon: 🧩
-    title: 可扩展的数据格式
-    details: 内置数据仓库格式，支持通过插件等自定义方式接入新的数据形态，随业务演进持续扩展。
+    title: 现代化架构与连通自测
+    details: 基于 NestJS + Prisma 7（44 个模块化模型），集成模块内置 TesterService 连通性在线自测，高可靠低故障。
 ---
 
 ## 按板块浏览
@@ -40,7 +43,7 @@ features:
 
 ### 🎓 项目总览
 
-- [项目概述](/guide/overview) — 定位、对外交互方式、权限控制、首个落地场景 · 愿景理念 · 系统定位 · 核心特点 · AI 归属决策 · 历史沿革 · 术语
+- [项目概述](/guide/overview) — 定位、三大数据资产飞轮、对外交互方式、权限控制、首个落地场景 · 愿景理念 · 系统定位 · 核心特点 · AI 归属决策 · 历史沿革 · 术语
 - [需求与范围](/guide/requirements) — 核心用户 · 典型场景 · 范围边界
 - [目标与成功指标](/guide/goals) — 项目目标 · 建设原则 · KPI
 - [组织与运营](/guide/organization) — 组织分工 · 风险应对 · 预算资源
@@ -48,8 +51,8 @@ features:
 
 ### 📡 产品现状（文档与代码对齐）
 
-- [数据源接入矩阵](/guide/data-sources) — 已接入 / 规划中数据源 · 接入方式 · 承载模块
-- [能力状态总览](/guide/capabilities) — 组件 / 接口协议 / AI 能力状态（已可用 · 部分可用 · 规划中）
+- [数据源接入矩阵](/guide/data-sources) — 已接入 / 规划中数据源 · 接入方式 · 承载模块（含 Stripe、企微、云盘等）
+- [能力状态总览](/guide/capabilities) — 组件 / 接口协议 / AI 能力状态（对齐 nove-cli v1.3.0、Prisma 7、分润冲销等现状）
 
 ### 🤝 合作方与落地场景
 
@@ -58,18 +61,18 @@ features:
 ### 🏗️ 架构与技术
 
 - [技术方案总览](/architecture/overview) — 整体架构 · 系统四层架构 · 核心模块详解 · AI 轻/重分层 · Job 模型 · 技术选型
-- [系统架构图集](/architecture/system-overview) — ASCII / Mermaid 架构图
-- [技术白皮书](/architecture/whitepaper) — 数据仓库 + AI 服务独立化的完整技术论证
+- [系统架构图集](/architecture/system-overview) — ASCII / Mermaid 彩色分层架构图
+- [技术白皮书](/architecture/whitepaper) — 数据基础设施 + 智能平面独立化的技术论证
 - [数据格式与扩展机制（方案探讨）](/architecture/data-format) — 内置数据仓库格式现状 · 三种设计取向 · 落地路径
 
 ### 🗺️ 路线图
 
-- [实施路线图](/roadmap/implementation) — 迭代策略 · 三阶段规划 · 12 周里程碑（M1-M6）· v1.0 交付物
+- [实施路线图](/roadmap/implementation) — 迭代策略 · 三阶段规划 · 达成现状与交付物清单
 - [三年技术与 AI 演进路线图](/roadmap/evolution) — 2026-2028 系统 / AI / 数据治理 / 工程成熟度演进
 
 ### 🔒 权限安全与合规
 
-- [人机统一权限体系](/security/permission-system) — 双主体模型 · RBAC/ABAC · AI scope 白名单 · 全链路审计 · 数据脱敏
+- [人机统一权限体系](/security/permission-system) — 组织级多租户隔离 · 双主体模型 · RBAC/ABAC · AI Scope 白名单 · JWT 批量吊销 · 实名证件合规
 - [数据与隐私保护白皮书](/security/privacy-whitepaper) — 数据治理原则 · 生命周期 · AI 访问审计 · 合规对齐
 
 ---
@@ -78,10 +81,10 @@ features:
 
 | 仓库 | 说明 |
 | --- | --- |
-| `nove_api` | 数据仓库主服务（NestJS）：数据获取、存储、权限、API/MCP/Skill 暴露，技术文档见 `nove_api/docs/` |
+| `nove_api` | 数据基础设施主服务（NestJS + Prisma 7）：多源数据接入、组织多租户隔离、商业结算与冲销、云盘驱动、权限审计、多协议开放接口 |
 | `nove-ai` | AI 智能计算层（规划中，前期由 OpenClaw、Hermes 等外部 Agent 软件代办）：数据预处理、关联发现、知识图谱、批量智能计算 |
-| `nove-admin` | 人类用户入口（React + Vite + Ant Design）：数据查看与操作 |
-| `nove-cli` | 命令行数据访问工具（oclif） |
+| `nove-admin` | 人类管理中枢（React + Vite + Ant Design）：16 大业务、资产、分润与治理视图 |
+| `nove-cli` | 命令行运维与数据工具（oclif + TypeScript，v1.3.0 覆盖 8 大模块，支持浏览器 OAuth 登录） |
 | `nove-skills` | Agent 技能包（meeting-api / user-api 参考） |
 
 > 本站点承载 **项目级业务文档**（定位、项目书、架构、路线图、合规）；各代码仓库的技术文档仍由各自仓库维护。
