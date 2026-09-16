@@ -50,3 +50,10 @@ pnpm docs:preview    # 本地预览构建产物
 - `.qoder/` 为 Qoder 工具生成内容，不入站、不维护。
 - OpenAPI 契约等 API 产物不属于站点内容，一律不入本仓库（从 nove-api 的 Swagger 实时获取）。
 - 各代码仓库的规划期方案 / 工程文档归各自仓库维护（如 nove-admin 的工程文档在 `nove-admin/docs/`），本仓库只保留项目级文档。
+
+---
+
+## 📄 许可
+
+本项目采用 [MIT License](./LICENSE) 开源协议。
+

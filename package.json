@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "nove 项目文档站（VitePress）：愿景、项目书、架构、路线图与方案沉淀",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "docs:dev": "vitepress dev .",
     "docs:build": "vitepress build .",
